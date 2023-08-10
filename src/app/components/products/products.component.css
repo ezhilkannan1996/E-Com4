@@ -1,0 +1,196 @@
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+  max-width: calc(20% - 20px); /* Distribute into 5 columns with 20px gap */
+  width: 100%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%; /* Set the width to 100% */
+  height: 150px; /* Set the fixed height for the product image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Make the image fit inside the box without cropping */
+}
+
+.product-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  color: #000; /* Change to black color */
+}
+
+.add-to-cart-btn,
+.view-product-link {
+  background-color: #e44d26;
+  color: #fff;
+  border: none;
+  padding: 6px 12px; /* Adjust padding for reduced size */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-size: 0.8rem; /* Adjust font size for reduced size */
+  text-decoration: none; /* Remove underline */
+  display: flex;
+  align-items: center;
+}
+
+.add-to-cart-btn:hover,
+.view-product-link:hover {
+  background-color: #c7320b;
+}
+
+.product-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.add-to-cart-btn {
+  margin-right: 10px; /* Add right margin to create space between buttons */
+}
+
+.mat-icon {
+  margin-right: 6px; /* Add spacing between icon and text */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 0;
+  margin: 0 10px;
+}
+
+.search-icon {
+  margin-right: 10px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"] {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #020202;
+}
+
+.product-name {
+  font-size: 1rem; /* Adjust font size as needed */
+  max-width: 100%; /* Ensure the name doesn't exceed the container width */
+  white-space: nowrap; /* Prevent line breaks */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis for longer names */
+  margin: 5px 0; /* Add some margin for spacing */
+}
+
+.product-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.sort-select {
+  width: 200px; /* Adjust width as needed */
+  margin-right: 10px;
+}
+
+.sort-select-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.custom-form-field {
+  width: 250px;
+  text-align: center;
+}
+
+.custom-label {
+  font-size: 14px;
+  color: #000000;
+  display: inline-block;
+  margin-right: 10px;
+  width: 68px;
+}
+
+.custom-select {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 6px;
+  font-size: 14px;
+  color: #333;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 100%;
+  text-align: center;
+}
+
+.custom-select:hover {
+  border-color: #000000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.custom-select:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.mat-option {
+  font-size: 12px;
+}
+.custom-option {
+  font-size: 14px; 
+  padding: 5px 10px; 
+}
+
+.mat-paginator {
+  padding-bottom: 20px; /* Adjust the padding value as needed */
+}

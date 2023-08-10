@@ -1,0 +1,9 @@
+<div class="order-list-container">
+  <h1 class="header-text">Order List</h1>
+  <ng-container *ngIf="orderList.length > 0; else noOrders">
+    <app-order-list [orderList]="orderList"></app-order-list>
+  </ng-container>
+  <ng-template #noOrders>
+    <p class="no-orders-text">No orders available.</p>
+  </ng-template>
+</div>

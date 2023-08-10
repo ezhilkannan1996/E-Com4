@@ -1,0 +1,38 @@
+<!-- cart-view.component.html -->
+<div class="cart-container">
+  <h1 class="header-text">Your Cart</h1>
+  <ng-container *ngIf="cartItems.length > 0; else emptyCart">
+    <div class="cart-items">
+      <div class="cart-item" *ngFor="let item of cartItems">
+        <div class="cart-item-image">
+          <img [src]="item.imageUrl" [alt]="item.name" />
+        </div>
+        <div class="item-details">
+          <h2 class="item-name">{{ item.name }}</h2>
+          <p class="item-price">Price: {{ item.price | currency: 'INR' }}</p>
+          <div class="quantity-controls">
+            Quanitity: <mat-icon class="control-icon" (click)="decreaseQuantity(item)">remove</mat-icon>
+            <span class="item-quantity">{{ item.quantity }}</span>
+            <mat-icon class="control-icon" (click)="increaseQuantity(item)">add</mat-icon>
+          </div>
+          <p class="total-price">Total: {{ getTotalPrice(item) | currency: 'INR' }}</p>
+        </div>
+        <mat-icon class="remove-button" (click)="removeFromCart(item)">delete</mat-icon>
+      </div>
+    </div>
+    <div class="cart-summary">
+      <p class="grand-total">Grand Total: {{ grandTotal | currency: 'INR' }}</p>
+      <button
+        mat-raised-button
+        color="accent"
+        class="place-order-button"
+        (click)="buyProducts(cartItems)"
+      >
+        Place Order
+      </button>
+    </div>
+  </ng-container>
+  <ng-template #emptyCart>
+    <p class="empty-cart-text">Your cart is empty.</p>
+  </ng-template>
+</div>

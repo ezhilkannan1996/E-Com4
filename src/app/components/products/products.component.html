@@ -1,0 +1,48 @@
+<div class="search-container">
+  <div class="sort-select-div">
+    <mat-label class="custom-label">Sort by</mat-label>
+    <mat-select [(value)]="selectedSortOption" class="custom-select" (selectionChange)="onSortChange()">
+      <mat-option value="lowToHigh" class="custom-option">Price: Low to High</mat-option>
+      <mat-option value="highToLow" class="custom-option">Price: High to Low</mat-option>
+    </mat-select>
+  </div>
+  <div class="search-input">
+    <mat-icon class="search-icon" [ngStyle]="{'font-size': searchQuery.length > 0 ? '33px' : '30px'}">search</mat-icon>
+    <input matInput type="text" placeholder="Search" [(ngModel)]="searchQuery" (input)="onSearchChange()">
+  </div>
+</div>
+
+<!-- <mat-form-field class="search-input">
+  <input matInput type="text" placeholder="Search">
+</mat-form-field> -->
+<!-- <app-product-sidebar (categorySelected)="filterProductsByCategory($event)"></app-product-sidebar> -->
+<section class="products-container">
+  <mat-card class="product-card" *ngFor="let product of (searchQuery ? filteredProducts : getPaginatedProducts())">
+    <div class="product-image">
+      <img [src]="product.imageUrl" alt="{{ product.name }}" />
+    </div>
+    <mat-card-content class="product-details">
+      <h3 class="product-name">{{ product.name }}</h3>
+      <span class="product-price">&#x20B9; {{ product.price }}</span> <!-- Indian Rupee symbol -->
+    </mat-card-content>
+    <mat-card-actions class="product-actions">
+      <div class="product-buttons">
+        <button mat-raised-button color="primary" (click)="addToCart(product)" class="add-to-cart-btn">
+          <mat-icon>add_shopping_cart</mat-icon>
+          <ng-container>Add to Cart</ng-container>
+        </button>
+        <a mat-button [routerLink]="['/product', product.id]" class="view-product-link">
+          <mat-icon>visibility</mat-icon> View
+        </a>
+      </div>
+    </mat-card-actions>    
+  </mat-card>
+</section>
+
+<mat-paginator
+  [length]="totalItems"
+  [pageSize]="itemsPerPage"
+  [pageIndex]="currentPage - 1"
+  [pageSizeOptions]="[5, 10, 20, 50]"
+  (page)="onPageChange($event)">
+</mat-paginator>

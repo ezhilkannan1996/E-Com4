@@ -1,0 +1,33 @@
+<mat-toolbar class="main-nav">
+  <div class="logo">
+    <a routerLink="/home">
+      <img src="assets/images/shopping-cart-in-shape-of-letter-c-4769ld.png" alt="ShopEase Logo" class="logo-image">
+      <!-- <img src="assets/images/speedy-shopping-cart-with-dollar-sign-5394ld.png" alt="ShopEase Logo" class="logo-image">
+      <img src="assets/images/lines-forming-shopping-cart-5408ld.png" alt="ShopEase Logo" class="logo-image"> -->
+      ShopEase<span class="version-text">v1.0.0</span>
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a routerLink="/home" [class.active-link]="currentRoute === '/home'">Home</a></li>
+    <li><a routerLink="/products" [class.active-link]="isProductsMenuSelected()">Products</a></li>
+    <li><a routerLink="/about-us" [class.active-link]="currentRoute === '/about-us'">About</a></li>
+    <li><a routerLink="/contact" [class.active-link]="currentRoute === '/contact'">Contact</a></li>
+  </ul>  
+  <div class="search-cart">
+    <!-- <mat-form-field class="search-input" *ngIf="isProductsMenuSelected()">
+      <input matInput type="text" placeholder="Search">
+    </mat-form-field> -->
+    <a routerLink="/view-cart" class="cart-icon">
+      <mat-icon>shopping_cart</mat-icon>
+    </a>
+    <a routerLink="/order-list" class="order-icon">
+      <mat-icon>list_alt</mat-icon>
+    </a>
+    <a routerLink="/user-profile" class="user-icon">
+      <mat-icon>person</mat-icon>
+    </a>
+    <a (click)="logout()" class="logout-icon">
+      <mat-icon>logout</mat-icon>
+    </a>
+  </div>
+</mat-toolbar>

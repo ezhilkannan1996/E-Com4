@@ -1,0 +1,27 @@
+.contact-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  
+  .contact-details {
+    margin-top: 30px;
+    text-align: left;
+  }
+  
+  .contact-details p {
+    font-size: 1rem;
+  }
+  
